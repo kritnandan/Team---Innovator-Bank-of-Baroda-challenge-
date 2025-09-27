@@ -76,6 +76,23 @@ Our solution is a **five-layer pipeline**, where each layer provides a unique si
 
 ---
 
+## 🔍 SHAP Analysis
+To ensure interpretability, we applied **SHAP (SHapley Additive exPlanations)** on the supervised XGBoost model.  
+
+<p align="center">
+  <img src="078d87c1-fcd0-4bac-ad96-e8a5a8490857.png" alt="SHAP Feature Importance" width="500"/>
+</p>
+
+### Key Insights:
+- **Risk Score** dominates predictions, indicating it encodes strong prior knowledge about fraud risk.  
+- **Age**, **recent transaction counts (tx_count_7d)**, and **account_age_days** are also highly predictive, reflecting behavioral patterns.  
+- **Rolling and temporal features** (e.g., `rolling_tx_sum_5`, `tx_hour`, `time_since_last_tx_seconds`) help capture abnormal spikes or unusual timing of transactions.  
+- **New Beneficiaries & Ratios** (e.g., `is_new_beneficiary`, `amount_to_avg_ratio`) highlight deviation from user’s baseline habits.  
+
+While `risk_score` is extremely predictive, over-reliance on it may introduce bias or overshadow behavioral signals. Combining static, behavioral, and relational features ensures a **balanced, fair, and resilient fraud detection system**.  
+
+---
+
 ## How to Run the Prototype
 The solution is contained in `Team_Innovator_Prototype_Solution.ipynb`.
 
