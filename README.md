@@ -76,11 +76,11 @@ Our solution is a **five-layer pipeline**, where each layer provides a unique si
 
 ---
 
-## 🔍 SHAP Analysis
+## SHAP Analysis
 To ensure interpretability, we applied **SHAP (SHapley Additive exPlanations)** on the supervised XGBoost model.  
 
 <p align="center">
-  <img src="078d87c1-fcd0-4bac-ad96-e8a5a8490857.png" alt="SHAP Feature Importance" width="500"/>
+  <img src="https://github.com/kritnandan/Team---Innovator-Bank-of-Baroda-challenge-/blob/main/SHAP_Analysis.png" alt="SHAP Feature Importance" width="500"/>
 </p>
 
 ### Key Insights:
